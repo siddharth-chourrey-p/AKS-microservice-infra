@@ -1,7 +1,7 @@
 infra_config = {
   resource_groups = {
     "rg-micro-prod" = {
-      location = "East US"
+      location = "southeastasia"
       tags     = { Environment = "Dev", ManagedBy = "Terraform" }
     }
   }
