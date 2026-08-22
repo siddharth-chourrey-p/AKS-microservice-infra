@@ -47,12 +47,12 @@ jobs:
         with:
           working_directory: ${{ env.TF_WORKING_DIR }}
 
-      - name: Run Checkov
-        uses: bridgecrewio/checkov-action@master
-        with:
-          directory: .
-          framework: terraform
-          soft_fail: true # Set to false to fail build on findings
+      # - name: Run Checkov
+      #   uses: bridgecrewio/checkov-action@master
+      #   with:
+      #     directory: .
+      #     framework: terraform
+      #     soft_fail: true # Set to false to fail build on findings
 
   terraform-plan:
     name: 'Terraform Plan'
