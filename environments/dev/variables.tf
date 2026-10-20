@@ -20,6 +20,12 @@ variable "infra_config" {
         vm_size    = optional(string, "Standard_DS2_v2")
       })
       tags = optional(map(string), {})
+      ingress_application_gateway = optional(object({
+        gateway_id   = optional(string)
+        gateway_name = optional(string)
+        subnet_cidr  = optional(string)
+        subnet_id    = optional(string)
+      }))
     }))
   })
 }

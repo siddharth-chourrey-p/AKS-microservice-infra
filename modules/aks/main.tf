@@ -8,6 +8,9 @@ resource "azurerm_kubernetes_cluster" "aks" {
   kubernetes_version  = each.value.kubernetes_version
   tags                = each.value.tags
 
+  oidc_issuer_enabled       = true
+  workload_identity_enabled = true
+
   default_node_pool {
     name       = each.value.default_node_pool.name
     node_count = each.value.default_node_pool.node_count
