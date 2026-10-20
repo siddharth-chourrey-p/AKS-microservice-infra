@@ -20,11 +20,12 @@ module "aks" {
   source = "../../modules/aks"
   kubernetes_clusters = {
     for k, v in var.infra_config.kubernetes_clusters : k => {
-      resource_group_name = module.resource_groups.resource_group_names[v.rg_key]
-      location            = var.infra_config.resource_groups[v.rg_key].location
-      dns_prefix          = v.dns_prefix
-      default_node_pool   = v.default_node_pool
-      tags                = v.tags
+      resource_group_name         = module.resource_groups.resource_group_names[v.rg_key]
+      location                    = var.infra_config.resource_groups[v.rg_key].location
+      dns_prefix                  = v.dns_prefix
+      default_node_pool           = v.default_node_pool
+      tags                        = v.tags
+      ingress_application_gateway = v.ingress_application_gateway
     }
   }
 }

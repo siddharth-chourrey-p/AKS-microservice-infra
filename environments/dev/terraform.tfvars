@@ -20,6 +20,10 @@ infra_config = {
         node_count = 2
         vm_size    = "Standard_B2s_v2"
       }
+      ingress_application_gateway = {
+        gateway_name = "axion-appgateway"
+        subnet_cidr  = "10.225.0.0/24"
+      }
     }
   }
 }
